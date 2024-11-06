@@ -3,12 +3,14 @@
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 
+<link rel="stylesheet" href="css/styles.css" />
+
 <h1>Acceso</h1>
 
 <div>
     <label for="key">Clave de acceso: </label>
-    <input type="password" id="key" @bind="key" />
-    <button @onclick="Access">Acceder</button>
+    <input type="password" id="key" @bind="key" class="form-control" />
+    <button @onclick="Access" class="btn btn-primary">Acceder</button>
 
 </div>
 
@@ -32,6 +34,8 @@
                 return;
             }
             message = "Clave incorrecta";
+        } else {
+            message = "Error";
         }
     }
 }
